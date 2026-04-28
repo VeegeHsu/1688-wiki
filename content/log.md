@@ -2,6 +2,21 @@
 
 ---
 
+## [2026-04-28] ingest | 导入数据库查询入口和traceId留痕规范
+
+**来源**：`.claude/projects/memory/project_database.md`、`feedback_traceid_collection.md`
+
+**新增 wiki/ 页面**（2个）：
+
+| 页面 | 类型 | 说明 |
+|------|------|------|
+| `企采/tech-数据查询入口.md` | tech | imall_operation 数据库，企采全业务查询入口 |
+| `通用/test-traceId留痕规范.md` | test（通用层） | traceId收集优先级、格式规范、写入位置 |
+
+**更新**：`wiki/index.md`（技术知识表 + 通用层各增一行）
+
+---
+
 ## [2026-04-28] ingest | 整合渠道对接业务知识
 
 **来源**：`.claude/projects/memory/project_qycg_channels.md`
