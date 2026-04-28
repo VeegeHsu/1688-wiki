@@ -2,6 +2,20 @@
 
 ---
 
+## [2026-04-28] ingest | 补充履约单查询接口文档
+
+**来源**：`.claude/skills/hsf-generic-caller/interfaces/fulfillment/OrderFacade/interface-spec.md`
+
+**新增 wiki/ 页面**（1个）：
+
+| 页面 | 类型 | 说明 |
+|------|------|------|
+| `tech-履约单查询接口.md` | tech | OrderFacade.getOrderById HSF接口规格，含入参、出参、状态码、Long精度坑 |
+
+**更新**：`wiki/index.md`（技术知识表新增一行）
+
+---
+
 ## [2026-04-27] init | 知识库初始化
 
 - 创建知识库：1688通用测试知识库
