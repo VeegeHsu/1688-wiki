@@ -2,6 +2,23 @@
 
 ---
 
+## [2026-04-28] ingest | 整合渠道对接业务知识
+
+**来源**：`.claude/projects/memory/project_qycg_channels.md`
+
+**新增 wiki/ 页面**（1个）：
+
+| 页面 | 类型 | 说明 |
+|------|------|------|
+| `biz-渠道对接模式.md` | biz | 四渠道概览、两大对接模式（API/Agent）、核心表、channel_code 区分 |
+
+**更新 wiki/ 页面**（1个）：
+- `biz-渠道商品体系.md`：补充渠道商品价格链路 DB JOIN 详情、价格字段说明、已知坑
+
+**更新**：`wiki/index.md`（业务知识表新增一行）
+
+---
+
 ## [2026-04-28] ingest | 补充履约单查询接口文档
 
 **来源**：`.claude/skills/hsf-generic-caller/interfaces/fulfillment/OrderFacade/interface-spec.md`

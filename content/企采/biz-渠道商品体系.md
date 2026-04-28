@@ -58,6 +58,36 @@ date: 2026-04-27
 
 > 已在采购草稿中的商品若变成不可售，预览下单时提示用户。同钉钉Agent的商品不可售逻辑一致。
 
+## 渠道商品价格链路（DB JOIN）
+
+**完整路径**：`channel_offer` → `channel_offer_item` → `product_item` → `supply_product_item`
+
+**关键字段映射**（三表同值，是串联关键）：
+
+| JOIN 条件 | 说明 |
+|-----------|------|
+| `order_detail.item_id` = `channel_offer.qc_product_id` | 从订单找渠道商品 |
+| `order_detail.sku_id` = `channel_offer_item.qc_product_sku_id` = `product_item.id` | SKU 串联 |
+| `order_detail.out_sku_id` = `channel_offer_item.channel_sku_id` | 天猫侧 SKU ID |
+| `product_item.supply_sku_id` = `supply_product_item.supply_sku_id` | 供货价入口 |
+
+**价格字段**：
+
+| 字段 | 含义 |
+|------|------|
+| `channel_offer_item.channel_price` | 渠道售价（分）= `order_detail.sale_price` |
+| `supply_product_item.supply_price` | 含税供货价（分，不含运） |
+| `order_detail.purchase_price` | 含税含运费供货价（分）= 供应商结算价 |
+
+**天猫定价规则**：天猫渠道默认包邮，运营定价时将运费计入 `channel_price`（买家 `out_post_fee=0`）。  
+平均运费无独立字段，从订单反推：`purchase_price − supply_price`。
+
+**已知坑**：
+- `channel_offer.offer_id` 在测试商品中为 **NULL**，不能用天猫商品 ID 直接匹配。
+- 预发 `channel_code` 是 `tmall_test`，不是 `tmall`；用 `tmall` 查永远 0 行。
+
+---
+
 ## 铺品接口
 
 | 接口 | 说明 |
