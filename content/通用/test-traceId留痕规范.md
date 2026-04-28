@@ -38,3 +38,7 @@ source: ".claude/projects/memory/feedback_traceid_collection.md"
 ## 适用范围
 
 已固化到 test-executor（Step 3 收集规则）和 test-report-generator（Case 模板信息表格），自动化测试流程中自动执行。
+
+## 关联
+
+- [[test-用例设计方法论]]
